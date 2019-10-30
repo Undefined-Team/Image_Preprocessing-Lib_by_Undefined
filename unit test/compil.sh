@@ -3,5 +3,5 @@
 if [ "$1" != "quick" ]; then
 ../setup.sh $1 $2
 fi
-gcc test.c -o executable
+gcc test.c -lud_preprocessing -o executable
 ./executable

@@ -1,5 +1,5 @@
-#include "ud_libname.h"
+#include "ud_preprocessing.h"
 
-void ud_libname_function(void)
+void ud_prep_function(void)
 {
 }
