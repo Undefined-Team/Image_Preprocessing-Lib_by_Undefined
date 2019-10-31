@@ -52,12 +52,15 @@ void ex_image_use(void)
 
 int main(void)
 {
-    ud_tensor *test = ud_tens_init_rand(ud_arr_set(size_t, 3, 500, 500), 0, 255);
-    ud_tensor *test2 = ud_tens_cpy(test);
-    ud_prep_vertical_flip(test);
-    ud_ut_test(ud_mem_cmp(test->val, test2->val, test->len));
-    ud_prep_horizontal_flip(test);
-    ud_ut_test(ud_mem_cmp(test->val, test2->val, test->len));
-    ud_prep_diagonal_flip(test);
-    ud_ut_test(!ud_mem_cmp(test->val, test2->val, test->len));
+    ud_tensor *test = ud_tens_init_rand(ud_arr_set(size_t, 3, 10, 10), 0, 255);
+    // ud_tensor *test2 = ud_tens_cpy(test);
+    // ud_prep_vertical_flip(test);
+    // ud_ut_test(ud_mem_cmp(test->val, test2->val, test->len));
+    // ud_prep_horizontal_flip(test);
+    // ud_ut_test(ud_mem_cmp(test->val, test2->val, test->len));
+    // ud_prep_diagonal_flip(test);
+    // ud_ut_test(!ud_mem_cmp(test->val, test2->val, test->len));
+    ud_tens_print(test);
+    ud_prep_samplewise_center(test);
+    ud_tens_print(test);
 }

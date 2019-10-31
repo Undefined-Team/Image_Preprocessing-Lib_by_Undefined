@@ -33,5 +33,6 @@ ud_tensor       *ud_prep_grayscale(ud_tensor *image);
 ud_tensor       *ud_prep_vertical_flip(ud_tensor *image);
 ud_tensor       *ud_prep_horizontal_flip(ud_tensor *image);
 ud_tensor       *ud_prep_diagonal_flip(ud_tensor *image);
+ud_tensor       *ud_prep_samplewise_center(ud_tensor *image);
 
 #endif
