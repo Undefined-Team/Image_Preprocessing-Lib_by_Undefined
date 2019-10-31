@@ -7,10 +7,7 @@
 
 // Macro
 # define    ud_prep_image(_var_name, ...) \
-    ({ \
-        ud_image_transform  _var_name = {__VA_ARGS__}; \
-        _var_name; \
-    })
+    ud_image_transform  _var_name = {__VA_ARGS__};
 
 // for grayscales
 # define CIE709(red, green, blue)       (0.299 * (red) + 0.587 * (green) + 0.114 * (blue))
@@ -34,5 +31,6 @@ ud_tensor       *ud_prep_vertical_flip(ud_tensor *image);
 ud_tensor       *ud_prep_horizontal_flip(ud_tensor *image);
 ud_tensor       *ud_prep_diagonal_flip(ud_tensor *image);
 ud_tensor       *ud_prep_samplewise_center(ud_tensor *image);
+ud_tensor       *ud_prep_image_transform(ud_tensor *image, ud_image_transform params);
 
 #endif
