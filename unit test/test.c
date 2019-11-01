@@ -1,4 +1,4 @@
-#include <ud_preprocessing.h>
+#include <ud_preprocessing_image.h>
 
 void ex_image_use(void)
 {

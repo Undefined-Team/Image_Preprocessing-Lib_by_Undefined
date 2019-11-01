@@ -1,4 +1,4 @@
-#include "ud_preprocessing.h"
+#include "ud_preprocessing_image.h"
 
 ud_tensor   *ud_prep_diagonal_flip(ud_tensor *image)
 {
@@ -13,7 +13,7 @@ ud_tensor   *ud_prep_diagonal_flip(ud_tensor *image)
 
     float *blue = gb_bound;
     float *r_blue = ud_tens_get_pval(image, ud_ut_array(size_t, 2, image->shape[1] - 1, 0));
-    
+
     for (; red < r_red; ++red, ++green, ++blue, --r_red, --r_green, --r_blue)
     {
         float tmp[3] = {*r_red, *r_green, *r_blue};

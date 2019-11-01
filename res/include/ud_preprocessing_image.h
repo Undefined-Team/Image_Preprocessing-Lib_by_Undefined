@@ -1,5 +1,5 @@
-#ifndef UD_PREPROCESSING_H
-# define UD_PREPROCESSING_H
+#ifndef UD_PREPROCESSING_IMAGE_H
+# define UD_PREPROCESSING_IMAGE_H
 
 // Lib
 #include <ud_tensor.h>

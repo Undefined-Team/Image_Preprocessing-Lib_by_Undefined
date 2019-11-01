@@ -1,4 +1,4 @@
-#include "ud_preprocessing.h"
+#include "ud_preprocessing_image.h"
 
 ud_tensor   *ud_prep_rescale(ud_tensor *image, float factor)
 {
