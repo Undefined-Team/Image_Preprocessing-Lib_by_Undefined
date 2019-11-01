@@ -21,6 +21,7 @@ typedef struct  uds_image_transform {
     ud_bool     horizontal_flip;
     ud_bool     grayscale;
     float       rotation_range;
+    float       rescale;
     float       width_shift_range;
     float       height_shift_range;
 }               ud_image_transform;
@@ -32,5 +33,6 @@ ud_tensor       *ud_prep_horizontal_flip(ud_tensor *image);
 ud_tensor       *ud_prep_diagonal_flip(ud_tensor *image);
 ud_tensor       *ud_prep_samplewise_center(ud_tensor *image);
 ud_tensor       *ud_prep_image_transform(ud_tensor *image, ud_image_transform params);
+ud_tensor       *ud_prep_rescale(ud_tensor *image, float factor);
 
 #endif

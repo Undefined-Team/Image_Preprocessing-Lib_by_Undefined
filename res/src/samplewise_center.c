@@ -3,8 +3,8 @@
 static size_t       ud_prep_substract_mean(float *val, unsigned long mean, size_t len, size_t n)
 {
     if (!len) return mean / n;
-    size_t mean_ret = ud_prep_substract_mean(&val[1], mean + *val, --len, ++n);
-    int new_val = *val - mean_ret;
+    size_t  mean_ret = ud_prep_substract_mean(&val[1], mean + *val, --len, ++n);
+    float   new_val = *val - mean_ret;
     *val = (new_val > 0) ? new_val : 255 + new_val;
     return mean_ret;
 }

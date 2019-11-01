@@ -58,10 +58,12 @@ int main(void)
         .featurewise_center = true,
         .horizontal_flip = true,
         .samplewise_center = true,
+        .rescale = 1.0 / 255.0,
         .rotation_range = 20,
         .width_shift_range = 0.2);
     ud_prep_image_transform(image, datagen);
     ud_prep_samplewise_center(image_cpy);
     ud_prep_horizontal_flip(image_cpy);
+    ud_tens_print(image);
     ud_ut_test(!ud_mem_cmp(image->val, image_cpy->val, image->len));
 }
