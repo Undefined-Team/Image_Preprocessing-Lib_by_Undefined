@@ -1,8 +1,7 @@
-#include "ud_preprocessing_image.h"
+#include "ud_image_preprocessing.h"
 
-ud_tensor   *ud_prep_rescale(ud_tensor *image, float factor)
+ud_tensor   *ud_imgp_rescale(ud_tensor *image, float factor)
 {
-    printf("rescale\n");
     size_t  len = image->shape_m[0];
     float   *red = (float *)image->val;
     float   *green = red + len;

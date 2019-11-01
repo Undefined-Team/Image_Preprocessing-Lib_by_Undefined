@@ -1,6 +1,6 @@
-#include "ud_preprocessing_image.h"
+#include "ud_image_preprocessing.h"
 
-ud_tensor   *ud_prep_horizontal_flip(ud_tensor *image)
+ud_tensor   *ud_imgp_horizontal_flip(ud_tensor *image)
 {
     size_t len = image->shape[2];
     size_t incr = image->shape_m[0];

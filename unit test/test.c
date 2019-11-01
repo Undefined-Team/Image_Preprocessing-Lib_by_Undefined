@@ -1,4 +1,4 @@
-#include <ud_preprocessing_image.h>
+#include <ud_image_preprocessing.h>
 
 void ex_image_use(void)
 {
@@ -54,16 +54,17 @@ int main(void)
 {
     ud_tensor *image = ud_tens_init_rand(ud_arr_set(size_t, 3, 10, 10), 0, 255);
     ud_tensor *image_cpy = ud_tens_cpy(image);
-    ud_prep_image(datagen,
+    ud_imgp_image(datagen,
         .featurewise_center = true,
         .horizontal_flip = true,
         .samplewise_center = true,
         .rescale = 1.0 / 255.0,
         .rotation_range = 20,
         .width_shift_range = 0.2);
-    ud_prep_image_transform(image, datagen);
-    ud_prep_samplewise_center(image_cpy);
-    ud_prep_horizontal_flip(image_cpy);
+    ud_imgp_image_transform(image, datagen);
+    ud_imgp_samplewise_center(image_cpy);
+    ud_imgp_horizontal_flip(image_cpy);
+    ud_imgp_rescale(image_cpy, 1.0/255.0);
     ud_tens_print(image);
     ud_ut_test(!ud_mem_cmp(image->val, image_cpy->val, image->len));
 }

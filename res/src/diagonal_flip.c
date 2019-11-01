@@ -1,6 +1,6 @@
-#include "ud_preprocessing_image.h"
+#include "ud_image_preprocessing.h"
 
-ud_tensor   *ud_prep_diagonal_flip(ud_tensor *image)
+ud_tensor   *ud_imgp_diagonal_flip(ud_tensor *image)
 {
     float *rg_bound = ud_tens_get_pval(image, ud_ut_array(size_t, 1, 0, 0));
     float *gb_bound = ud_tens_get_pval(image, ud_ut_array(size_t, 2, 0, 0));

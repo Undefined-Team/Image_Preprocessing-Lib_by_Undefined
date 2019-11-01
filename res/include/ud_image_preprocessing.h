@@ -1,12 +1,12 @@
-#ifndef UD_PREPROCESSING_IMAGE_H
-# define UD_PREPROCESSING_IMAGE_H
+#ifndef UD_IMAGE_PREPROCESSING_H
+# define UD_IMAGE_PREPROCESSING_H
 
 // Lib
 #include <ud_tensor.h>
 #include <ud_csv_array.h>
 
 // Macro
-# define    ud_prep_image(_var_name, ...) \
+# define    ud_imgp_image(_var_name, ...) \
     ud_image_transform  _var_name = {__VA_ARGS__};
 
 // for grayscales
@@ -27,12 +27,12 @@ typedef struct  uds_image_transform {
 }               ud_image_transform;
 
 // Prototypes
-ud_tensor       *ud_prep_grayscale(ud_tensor *image);
-ud_tensor       *ud_prep_vertical_flip(ud_tensor *image);
-ud_tensor       *ud_prep_horizontal_flip(ud_tensor *image);
-ud_tensor       *ud_prep_diagonal_flip(ud_tensor *image);
-ud_tensor       *ud_prep_samplewise_center(ud_tensor *image);
-ud_tensor       *ud_prep_image_transform(ud_tensor *image, ud_image_transform params);
-ud_tensor       *ud_prep_rescale(ud_tensor *image, float factor);
+ud_tensor       *ud_imgp_grayscale(ud_tensor *image);
+ud_tensor       *ud_imgp_vertical_flip(ud_tensor *image);
+ud_tensor       *ud_imgp_horizontal_flip(ud_tensor *image);
+ud_tensor       *ud_imgp_diagonal_flip(ud_tensor *image);
+ud_tensor       *ud_imgp_samplewise_center(ud_tensor *image);
+ud_tensor       *ud_imgp_image_transform(ud_tensor *image, ud_image_transform params);
+ud_tensor       *ud_imgp_rescale(ud_tensor *image, float factor);
 
 #endif

@@ -1,6 +1,6 @@
-#include "ud_preprocessing_image.h"
+#include "ud_image_preprocessing.h"
 
-ud_tensor   *ud_prep_grayscale(ud_tensor *image)
+ud_tensor   *ud_imgp_grayscale(ud_tensor *image)
 {
     float *red = (float *)image->val;
     float *green = ud_tens_get_pval(image, ud_ut_array(size_t, 1, 0, 0));
