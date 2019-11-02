@@ -43,5 +43,6 @@ ud_tensor       *ud_imgp_rescale(ud_tensor *image, float factor);
 ud_arr          *ud_imgp_load_dataset_from_dir(char *image_dir);
 ud_arr          *ud_imgp_featurewise_center(ud_arr *dataset);
 ud_tensor       *ud_imgp_width_shift(ud_tensor *image, int shift);
+ud_tensor       *ud_imgp_height_shift(ud_tensor *image, size_t shift);
 
 #endif

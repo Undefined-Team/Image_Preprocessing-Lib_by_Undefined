@@ -22,6 +22,8 @@ void    *ud_imgp_apply_ctr(void *data, ud_arr_type *type, ud_image_transform par
             ud_imgp_rescale(image, params.rescale);
         if (params.width_shift_range > 0.f)
             ud_imgp_width_shift(image, params.rescale);
+        if (params.height_shift_range > 0.f)
+            ud_imgp_height_shift(image, params.rescale);
         return image;
     }
     else if (type == ud_arr_type_arr())
@@ -47,6 +49,8 @@ void    *ud_imgp_apply_ctr(void *data, ud_arr_type *type, ud_image_transform par
             ud_ptr_foreach(images, image, ud_imgp_rescale(*image, params.rescale););
         if (params.width_shift_range > 0.f)
             ud_ptr_foreach(images, image, ud_imgp_width_shift(*image, params.width_shift_range););
+        if (params.height_shift_range > 0.f)
+            ud_ptr_foreach(images, image, ud_imgp_height_shift(*image, params.height_shift_range););
         return data;
     }
     return NULL;

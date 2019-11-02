@@ -40,13 +40,11 @@ ud_tensor       *ud_imgp_width_shift(ud_tensor *image, int shift)
         }
     else
         for (ud_ut_count i = 0; i < nb_rows; ++i, r_red += row_len, r_green += row_len, r_blue += row_len)
-        {
             for (ud_ut_count j = 0; j < (size_t)shift; ++j)
             {
                 ud_imgp_shift(r_red, r_red + j, j, row_len, shift, iterations);
                 ud_imgp_shift(r_green, r_green + j, j, row_len, shift, iterations);
                 ud_imgp_shift(r_blue, r_blue + j, j, row_len, shift, iterations);
             }
-        }
     return image;
 }

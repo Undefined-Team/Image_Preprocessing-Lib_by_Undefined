@@ -3,7 +3,7 @@
 ud_tensor   *ud_img_read(char *name) // to remove when real function is done
 {
     (void)name;
-    return ud_tens_init_rand(ud_arr_set(size_t, 3, 11, 11), 0, 255);
+    return ud_tens_init_rand(ud_arr_set(size_t, 3, 10, 10), 0, 255);
 }
 
 ud_tensor   **ud_imgp_get_dataset(DIR *d, struct dirent *dir, ud_arr **dataset, size_t nb_images)

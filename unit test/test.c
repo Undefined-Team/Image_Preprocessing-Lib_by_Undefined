@@ -65,7 +65,7 @@ int main(void)
     // ud_tensor *image = ud_tens_init_rand(ud_arr_set(size_t, 3, 10, 10), 0, 255);
     // ud_tensor *image_cpy = ud_tens_cpy(image);
     ud_imgp_image(datagen,
-        .width_shift_range = 2.0);
+        .height_shift_range = 2.0);
     dataset = ud_imgp_apply(dataset, datagen);
     // image = ud_imgp_apply(image, datagen);
     ud_arr_print(dataset);
